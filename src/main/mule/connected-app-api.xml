@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e0ac87d3-37da-407d-b20e-b398576c50d4" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="connectedapp-apiFlow" doc:id="7a59903b-61b8-4c8a-9f56-835e996e6990" >
+		<http:listener doc:name="Listener" doc:id="aa4622e8-98ae-4bfc-bc3b-bffd9b50fbe9" config-ref="HTTP_Listener_config" path="/hello" />
+		<set-payload value='#["Hello Succes"]' doc:name="Set Payload" doc:id="ce199f65-3a13-446e-8bb7-71b716e78de7" />
+		<logger level="INFO" doc:name="Logger" doc:id="2015dd60-c4ee-4896-957f-62db07575ec6" message='#["Success Message"]' />
+	</flow>
+</mule>
