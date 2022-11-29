@@ -71,7 +71,7 @@ jobs:
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        ENVIRONMENT: Development
+        ENVIRONMENT: Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
