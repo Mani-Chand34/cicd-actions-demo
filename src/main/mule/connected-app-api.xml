@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="connectedapp-apiFlow" doc:id="7a59903b-61b8-4c8a-9f56-835e996e6990" >
 		<http:listener doc:name="Listener" doc:id="aa4622e8-98ae-4bfc-bc3b-bffd9b50fbe9" config-ref="HTTP_Listener_config" path="/hello" />
-		<set-payload value='#["Hello Success"]' doc:name="Set Payload" doc:id="ce199f65-3a13-446e-8bb7-71b716e78de7" />
+		<set-payload value='#["Hello Successfull Message"]' doc:name="Set Payload" doc:id="ce199f65-3a13-446e-8bb7-71b716e78de7" />
 		<logger level="INFO" doc:name="Logger" doc:id="2015dd60-c4ee-4896-957f-62db07575ec6" message='#["Successful Message"]' />
 	</flow>
 </mule>
